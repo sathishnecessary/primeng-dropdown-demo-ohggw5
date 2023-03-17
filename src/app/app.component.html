@@ -1,0 +1,24 @@
+<h5>Editable</h5>
+<p-dropdown
+  [options]="cities"
+  [(ngModel)]="selectedCity2"
+  editable="true"
+  optionLabel="name"
+  (onBlur)="mouseLeaveEvent($event)"
+></p-dropdown>
+
+<p-dropdown
+  inputId="editable-dropdown"
+  [options]="cities"
+  [(ngModel)]="selectedCity2"
+  editable="true"
+  styleClass="p-col-12 p-col-nogutter"
+  placeholder="Select a Brand"
+></p-dropdown>
+
+<p-button label="delete" (onClick)="deleteGroup($event)"></p-button>
+<ul>
+  <li *ngFor="let city of cities">
+    <b> {{ city.name }} </b>
+  </li>
+</ul>
